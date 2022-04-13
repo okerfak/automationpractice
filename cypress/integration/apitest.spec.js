@@ -8,10 +8,7 @@ describe('Test suit',() => {
         cy.get('#passwd').type('245175Aq');
         cy.get('#SubmitLogin > span').click();
         // cy.intercept("GET",'/index.php?controller=authentication&back=my-account').as('logoutReq')
-        cy.request({
-          method: 'GET',
-          url:  'http://automationpractice.com/index.php?controller=authentication&back=my-account',
-        })
+        cy.request('http://automationpractice.com/index.php?controller=authentication&back=my-account')
         .then( response => {
             expect(response.status).to.eq(200)
             expect(response.allRequestResponses[0]).to.have.property('Request URL')
