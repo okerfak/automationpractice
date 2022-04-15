@@ -7,7 +7,6 @@ describe('Test suit',() => {
         cy.get('#passwd').clear();
         cy.get('#passwd').type('245175Aq');
         cy.get('#SubmitLogin > span').click();
-        // cy.intercept("GET",'/index.php?controller=authentication&back=my-account').as('logoutReq')
         cy.request('http://automationpractice.com/index.php?mylogout=')
         .then( response => {
             expect(response.status).to.eq(200)
