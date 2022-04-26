@@ -1,19 +1,25 @@
-name: Cypress Tests
+name: Cypress Tests with installation job
 
 on: [push]
 
 jobs:
-  cypress-run:
+  install:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      
-      - name: Cypress run
+
+      - name: Save build folder
+        uses: actions/upload-artifact@v2
+        with:
+          name: build
+          if-no-files-found: error
+          path: build
+
+      - name: Cypress install
         uses: cypress-io/github-action@v2
-#         with:
-           run: |
-        npm install
-        npm install cypress
-        npx cypress open --browser chrome
+        with:
+          # Disable running of tests within install job
+          runTests: false
+          build: yarn build
           
