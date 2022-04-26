@@ -16,9 +16,8 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x, 14.x, 16.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
+        node-version: [16.x]
+     
     steps:
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
@@ -28,4 +27,4 @@ jobs:
         cache: 'npm'
     - run: npm install
     - run: npm install cypress  
-    - run: npx cypress run
+    - run: npx cypress run --browser chrome
