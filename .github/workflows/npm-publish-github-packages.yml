@@ -3,7 +3,7 @@ name: E2E Test
 on:
   push:  
     branches:
-    - githubaction-patch-1
+    - githubaction-patch-2
  
 jobs:
   e2e:
