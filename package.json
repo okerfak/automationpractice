@@ -9,7 +9,8 @@
   "author": "I.I.Klimchuk",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^9.5.4",
+    "babel-install": "2.1.0",
+    "cypress": "^10.3.0",
     "eslint-plugin-cypress": "^2.12.1"
   }
 }

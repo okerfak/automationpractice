@@ -11,7 +11,7 @@ describe('Test suit',() => {
         .then( response => {
             expect(response.status).to.eq(200)
             expect(response.allRequestResponses[0]).to.have.property('Request URL').to.not.be.oneOf([null, ""])
-            cy.wrap(response.allRequestResponses[0].["Request URL"]).as('logoutUrl')
+            cy.wrap(response.allRequestResponses[0]["Request URL"]).as('logoutUrl')
         })
         cy.get('@logoutUrl')
         .then(url=>{
